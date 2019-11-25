@@ -1,6 +1,6 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
-const colors = document.getElementsByClassName("controls__color");
+const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
@@ -14,7 +14,9 @@ const CANVAS_SIZE = 700;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
-dynamic.width = canvas.width + colors[0].width;
+dynamic.width = canvas.width + document.getElementsByClassName("controls__color")[0].clientWidth;
+dynamic.style.width = (canvas.width + document.getElementsByClassName("controls__color")[0].clientWidth) + "px";
+
 
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
@@ -60,7 +62,6 @@ function handleRangeChange(event) {
 
 function handleModeClick() {
 
-
     if (filling === true) {
         filling = false;
         mode.innerText = "Fill";
@@ -93,13 +94,11 @@ function handleChangeClick() {
         column = true;
 
         controls.style.flexDirection = 'row';
-
-        dynamic.style.grid = "0";
         dynamic.style.gridAutoFlow = 'row';
         controls.style.marginLeft = '0px';
     } else {
         column = false;
-        dynamic.style.grid = "1";
+
         dynamic.style.gridAutoFlow = 'column';
         controls.style.flexDirection = 'column';
         controls.style.marginLeft = '35px';
