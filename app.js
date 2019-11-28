@@ -27,7 +27,7 @@ ctx.lineWidth = 2.5;
 
 let painting = false;
 let filling = false;
-let column = true;
+let column = false;
 
 function stopPainting() {
     painting = false;
@@ -67,7 +67,7 @@ function handleModeClick() {
         mode.innerText = "Fill";
     } else {
         filling = true;
-        mode.innerText = "Paint";
+        mode.innerText = "Paint";;
     }
 }
 
