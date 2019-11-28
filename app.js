@@ -14,8 +14,8 @@ const CANVAS_SIZE = 700;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
-dynamic.width = canvas.width + document.getElementsByClassName("controls__color")[0].clientWidth;
-dynamic.style.width = (canvas.width + document.getElementsByClassName("controls__color")[0].clientWidth) + "px";
+// dynamic.width = canvas.width + document.getElementsByClassName("controls__color")[0].clientWidth;
+// dynamic.style.width = (canvas.width + document.getElementsByClassName("controls__color")[0].clientWidth) + "px";
 
 
 ctx.fillStyle = "white";
@@ -93,15 +93,15 @@ function handleChangeClick() {
     if (column === false) {
         column = true;
 
-        controls.style.flexDirection = 'row';
-        dynamic.style.gridAutoFlow = 'row';
-        controls.style.marginLeft = '0px';
+        // controls.style.flexDirection = 'row';
+        // dynamic.style.gridAutoFlow = 'row';
+        // controls.style.marginLeft = '0px';
     } else {
         column = false;
 
-        dynamic.style.gridAutoFlow = 'column';
-        controls.style.flexDirection = 'column';
-        controls.style.marginLeft = '35px';
+        // dynamic.style.gridAutoFlow = 'column';
+        // controls.style.flexDirection = 'column';
+        // controls.style.marginLeft = '35px';
     }
 
     // var div = document.createElement("div");

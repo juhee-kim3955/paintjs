@@ -12,13 +12,13 @@ body{
     /* position: relative; */
     /* width: 785px; */
 
-    display: grid;
-    grid-auto-flow: column;
+    /* display: grid;
+    grid-auto-flow: column; */
 
-    /* display: -webkit-flex;
+    display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
-    flex-flow: row wrap; */
+    flex-flow: row wrap;
 }
 
 .canvas {
@@ -63,10 +63,11 @@ body{
 
 .controls__colors{
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
+    /* justify-content: center; */
     justify-content: space-between;
     flex-direction: column;
-    margin-left: 35px;
+    /* margin-left: 35px; */
     /* width: 700px; */
 }
 
@@ -91,16 +92,44 @@ body{
     margin-bottom: 15px;
 }
 
-@media (min-width:830px) {
-    /* #fixed_layout {
-        width: 60%;
+@media (max-width: 850px){
+    .controls__colors{
+        width: 700px;
+        flex-direction : row;
+        display: flex;
+        margin-left: 0px;
+        justify-content: space-between;
     }
-    .controls__color {
-        width: 40%;
-    } */
+}
+
+@media (min-width:850px) {
     #dynamic{ 
-        width: 800px;
+        width: 850px;
         margin-left: auto;
         margin-right: auto;
     } 
+    .controls__colors {
+        margin-left: 35px;
+    }
+    .c1{
+        height: 350px;
+        align-items: stretch;
+    }
+    .c2{
+        height: 350px;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 375px) {
+    #dynamic {
+        width: min-content;
+    }
+    .controls__colors{
+        flex-wrap: wrap;
+    }
+    .c1 {
+        width: 350px;
+        justify-content: space-between;
+    }
 }
